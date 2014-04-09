@@ -1,0 +1,12 @@
+{
+  "name": "phaser-coffee-template",
+  "version": "0.0.1",
+  "main": "index.html",
+  "window": {
+    "title": "phaser-coffee-template",
+    "toolbar": false,
+    "frame": true,
+    "width": 960,
+    "height": 640
+  }
+}
