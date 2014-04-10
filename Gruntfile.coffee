@@ -47,7 +47,7 @@ module.exports = (grunt) ->
     browserify:
       dist:
         files:
-          'dist/game.js': 'game/**/*.coffee'
+          'dist/game.js': 'game/main.coffee'
         options:
           browserifyOptions:
             extensions: ['.coffee']
@@ -71,6 +71,8 @@ module.exports = (grunt) ->
 
     imagemin:
       dynamic:
+        options:
+          optimizationLevel: if production then 7 else 3
         files: [
           expand: true
           src: ['assets/images/**/*.{png,jpg,gif}']
