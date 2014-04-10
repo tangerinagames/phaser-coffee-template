@@ -99,7 +99,7 @@ module.exports = (grunt) ->
         linux64: true
       src: ['dist/**/*']
 
-  grunt.registerTask 'build', ['bower', 'browserify', 'uglify', 'copy', 'imagemin', 'stylus']
+  grunt.registerTask 'build', ['bower', 'browserify', 'newer:uglify', 'newer:copy', 'newer:imagemin', 'newer:stylus']
   grunt.registerTask 'serve', ['build', 'connect', 'open', 'watch']
   grunt.registerTask 'desktop', ['build', 'nodewebkit']
   grunt.registerTask 'default', ['serve']

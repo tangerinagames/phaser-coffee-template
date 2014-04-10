@@ -8,10 +8,10 @@ class GameState extends Phaser.State
     @game.scale.pageAlignVertically = true
     @game.scale.refresh()
 
-    @logo = @game.add.sprite @game.world.centerX, @game.world.centerY, 'logo'
+    @logo = @game.add.sprite config.game.width * .5, config.game.height * .5, 'logo'
     @logo.anchor.setTo .5, .5
 
   update: ->
     @logo.angle += 1
 
-module.exports = {GameState}
+module.exports = GameState
