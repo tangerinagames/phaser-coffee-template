@@ -3,3 +3,4 @@ lib
 desktop
 dist
 node_modules
+npm-debug.log

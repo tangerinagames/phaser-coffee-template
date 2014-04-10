@@ -64,9 +64,17 @@ module.exports = (grunt) ->
     copy:
       dist:
         files: [
-          { expand: true, src: ['assets/**'], dest: 'dist/' }
+          { expand: true, src: ['assets/**', '!assets/images/*'], dest: 'dist/' }
           { expand: false, src: ['index.html'], dest: 'dist/index.html' }
           { expand: false, src: ['game/package.json'], dest: 'dist/package.json' }
+        ]
+
+    imagemin:
+      dynamic:
+        files: [
+          expand: true
+          src: ['assets/images/**/*.{png,jpg,gif}']
+          dest: 'dist'
         ]
 
     stylus:
@@ -89,7 +97,7 @@ module.exports = (grunt) ->
         linux64: true
       src: ['dist/**/*']
 
-  grunt.registerTask 'build', ['bower', 'browserify', 'uglify', 'stylus', 'copy']
+  grunt.registerTask 'build', ['bower', 'browserify', 'uglify', 'copy', 'imagemin', 'stylus']
   grunt.registerTask 'serve', ['build', 'connect', 'open', 'watch']
   grunt.registerTask 'desktop', ['build', 'nodewebkit']
   grunt.registerTask 'default', ['serve']
