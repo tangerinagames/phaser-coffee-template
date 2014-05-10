@@ -1,0 +1,27 @@
+	{ 
+		
+		"ship": [
+			
+				{
+					"density": 2, "friction": 0, "bounce": 0, 
+					"filter": { "categoryBits": 1, "maskBits": 65535 },
+					"shape": [   58, 61  ,  26, 61  ,  6, 38  ,  30, 19  ,  53, 19  ,  73, 28  ,  78, 37  ,  79, 56  ]
+				}  ,
+				{
+					"density": 2, "friction": 0, "bounce": 0, 
+					"filter": { "categoryBits": 1, "maskBits": 65535 },
+					"shape": [   6, 38  ,  26, 61  ,  6, 55  ]
+				}  ,
+				{
+					"density": 2, "friction": 0, "bounce": 0, 
+					"filter": { "categoryBits": 1, "maskBits": 65535 },
+					"shape": [   53, 19  ,  30, 19  ,  37, 3  ,  48, 3  ]
+				}  ,
+				{
+					"density": 2, "friction": 0, "bounce": 0, 
+					"filter": { "categoryBits": 1, "maskBits": 65535 },
+					"shape": [   30, 19  ,  6, 38  ,  13, 26  ]
+				}  
+		]
+		
+	}
