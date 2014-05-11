@@ -2,12 +2,14 @@ Flame = require './flame'
 
 class SpaceShip extends Phaser.Sprite
 
-  ROTATION_SPEED: 100
-  ACCELERATION: 1000
-  MAX_SPEED: 500
+  @ROTATION_SPEED: 100
+  @ACCELERATION: 1000
+  @MAX_SPEED: 500
 
   constructor: (game) ->
     super game, game.world.centerX, game.world.centerY, 'ship'
+
+    # add to the game
     @game.add.existing @
 
     # animation
@@ -28,16 +30,16 @@ class SpaceShip extends Phaser.Sprite
   update: ->
     # check the input
     if @cursors.left.isDown
-      @body.rotateLeft SpaceShip::ROTATION_SPEED
+      @body.rotateLeft SpaceShip.ROTATION_SPEED
 
     else if @cursors.right.isDown
-      @body.rotateRight SpaceShip::ROTATION_SPEED
+      @body.rotateRight SpaceShip.ROTATION_SPEED
 
     else
       @body.setZeroRotation()
 
     if @cursors.up.isDown
-      @body.thrust SpaceShip::ACCELERATION
+      @body.thrust SpaceShip.ACCELERATION
       @animations.play 'boost' unless @boost.isPlaying or @boost.isFinished
       @flames.visible = true
 
@@ -63,7 +65,7 @@ class SpaceShip extends Phaser.Sprite
 
 
   limitSpeed: ->
-    maxSpeed = @game.physics.p2.pxm SpaceShip::MAX_SPEED
+    maxSpeed = @game.physics.p2.pxm SpaceShip.MAX_SPEED
     x = @body.velocity.x
     y = @body.velocity.y
     if Math.pow(x, 2) + Math.pow(y, 2) > Math.pow(maxSpeed, 2)

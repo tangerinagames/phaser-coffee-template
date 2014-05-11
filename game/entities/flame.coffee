@@ -2,6 +2,7 @@ class Flame extends Phaser.Sprite
 
   constructor: (game, group, collisionGroup) ->
     super game, game.world.centerX, game.world.centerY, 'flame'
+
     @anchor.setTo .5, 0
     group.add @
 
